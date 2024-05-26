@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="menu-icon">&#9776;</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="latest-news.html" class="active">Latest News</a>
+                    <a href="reviews.html">Reviews</a>
+                </div>
+                <div class="contact-switch">
+                    <span>Contact Us</span>
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="latest-news">
+                <h1>Latest News</h1>
+                <div class="categories">
+                    <a href="politics.html"><button id="politics">Politics</button></a>
+                    <a href="business.html"><button id="business">Business</button></a>
+                    <a href="tech.html"><button id="tech">Tech</button></a>
+                    <a href="arts.html"><button id="arts" class="active">Arts</button></a>
+                    <a href="science.html"><button id="science">Science</button></a>
+                    <a href="health.html"><button id="health">Health</button></a>
+                    <a href="sports.html"><button id="sports">Sports</button></a>
+                </div>
+                <div class="articles">
+                    <div class="article article-small" onclick="window.location.href='unrecognized-genius.html';">
+                        <img src="https://via.placeholder.com/150" alt="Unrecognized genius">
+                        <div class="article-info">
+                            <h2>Unrecognized genius</h2>
+                            <p>Rising star Alexandra’s new work causes a lot of controversy in creative circles. According to the artist, the picture illustrates a state of horror.</p>
+                            <div class="author-info">
+                                <img src="https://via.placeholder.com/50" alt="Author">
+                                <span>Wade Warren</span>
+                                <span class="role">Newsman</span>
+                                <span class="time">16h ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article article-small" onclick="window.location.href='photography.html';">
+                        <h2>Photography</h2>
+                        <p>An exhibition of photographers from all over the world took place in Berlin. Over 100 photographers present their work to the world. The exhibition aroused great interest among the public.</p>
+                        <span class="time">16h ago</span>
+                    </div>
+                    <div class="article article-large" onclick="window.location.href='museum-modern-art.html';">
+                        <img src="https://via.placeholder.com/300" alt="Museum of Modern Art">
+                        <div class="article-info">
+                            <h2>Museum of Modern Art completed in London</h2>
+                            <p>On March 10, 2022, the Museum of Modern Art opened in London. More than 53,000 people have already booked tickets to the new museum. The permanent exhibition includes over 6,000 works many of which were donated by the English collector Robert Fox. The opening of the square building has been postponed several times since the beginning of 2020. Those who have already visited the museum are really lucky.</p>
+                            <span class="time">5h ago</span>
+                        </div>
+                    </div>
+                    <aside class="number-of-the-day">
+                        <h2>NUMBER OF THE DAY</h2>
+                        <p>$80,000</p>
+                        <p>was earned at a charity auction in Paris. The money raised goes to children’s hospitals.</p>
+                    </aside>
+                    <div class="article article-small" onclick="window.location.href='installation-per-million.html';">
+                        <img src="https://via.placeholder.com/150" alt="Installation per million">
+                        <div class="article-info">
+                            <h2>Installation per million</h2>
+                            <p>During the first two days of the exhibition, Pierre was visited by more than 30,000 people. The artist did not expect that his installation would arouse such interest. In two days, he managed to break the record for the number of visitors to the exhibition among all artists of our time.</p>
+                            <span class="time">10h ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const path = window.location.pathname;
+            const currentPage = path.split("/").pop().split(".")[0];
+            const buttons = document.querySelectorAll(".categories button");
+            
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    buttons.forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+                });
+            });
+
+            const setActiveButton = () => {
+                buttons.forEach(btn => btn.classList.remove("active"));
+                const currentButton = document.getElementById(currentPage);
+                if (currentButton) {
+                    currentButton.classList.add("active");
+                }
+            };
+
+            setActiveButton();
+        });
+    </script>
+</body>
+</html>

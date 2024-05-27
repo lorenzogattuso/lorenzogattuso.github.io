@@ -7,8 +7,8 @@ themeSwitch.addEventListener('change', () => {
     
     // Cambio del wallpaper
     if (document.body.classList.contains('dark-theme')) {
-        document.body.style.backgroundImage = "url('dark_wallpaper.jpg')";
+        document.body.style.backgroundImage = "url('dark_wallpaper.webp')";
     } else {
-        document.body.style.backgroundImage = "url('light_wallpaper.jpg')";
+        document.body.style.backgroundImage = "url('light_wallpaper.webp')";
     }
 });

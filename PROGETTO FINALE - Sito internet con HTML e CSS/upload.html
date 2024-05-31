@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resource</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            margin-top: 0;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container input[type="text"],
+        .container input[type="file"],
+        .container input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload New Resource</h1>
+        <form action="upload_handler.php" method="post" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Resource Title" required>
+            <input type="text" name="description" placeholder="Resource Description" required>
+            <input type="file" name="file" required>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+<script src="/scripts/script.js"></script>
+<script src="/scripts/darkmode.js"></script>
+</html>

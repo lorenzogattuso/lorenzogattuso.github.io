@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politics</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../latest-news.html" class="active">Latest News</a></li>
+                <li><a href="../reviews.html">Reviews</a></li>
+            </ul>
+            <div class="contact-us">
+                <span>Contact Us</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="latest-news">
+            <div class="news-categories">
+                <button onclick="filterNews('all')">All</button>
+                <button onclick="filterNews('politics')" class="active">Politics</button>
+                <button onclick="filterNews('business')">Business</button>
+                <button onclick="filterNews('tech')">Tech</button>
+                <button onclick="filterNews('arts')">Arts</button>
+                <button onclick="filterNews('science')">Science</button>
+                <button onclick="filterNews('health')">Health</button>
+                <button onclick="filterNews('sports')">Sports</button>
+            </div>
+            <!-- Insert relevant articles here -->
+            <article>
+                <img src="../images/image1.jpg" alt="Artwork">
+                <h2><a href="../articles/article1.html">Unrecognized genius</a></h2>
+                <p>Rising star Alexandra’s new work causes a lot of controversy in creative circles. According to the artist, the picture illustrates a state of horror. <time datetime="2024-05-25T16:00">16h ago</time></p>
+                <p>By Wade Warren, Newsman</p>
+            </article>
+        </section>
+    </main>
+    <script src="/script.js"></script>
+    <script src="/darkmode.js"></script>
+</body>
+</html>

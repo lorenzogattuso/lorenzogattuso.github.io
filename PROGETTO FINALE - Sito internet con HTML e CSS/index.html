@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="icon/news.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="Logo privacy news.png" alt="Logo">
+                </div>
+                <div class="menu-icon">&#9776;</div>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="resources.php">Resources</a>
+                    <a href="ContactUS.html">Contact us</a>
+                </div>
+                <div class="contact-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="Home">
+                <h1>Home</h1>
+                <div class="categories">
+                    <a href="https://duckduckgo.com/"><button id="politics">Duck Duck Go</button></a>
+                    <a href="https://www.torproject.org/"><button id="business">Tor project</button></a>
+                    <a href="https://www.softether.org/"><button id="tech">Softether VPN</button></a>
+                    <a href="https://proton.me/it/mail"><button id="arts" class="active">Proton Mail</button></a>
+                    <a href="https://nordvpn.com/"><button id="science">Nord VPN</button></a>
+                    <a href="https://signal.org/"><button id="health">Signal</button></a>
+                    <a href="https://element.io/"><button id="sports">Element (chatrooms)</button></a>
+                </div>
+            </section>
+            <section class="Home">
+                <h1>Home</h1>
+                <div id="articles-container" class="articles-container"></div>
+            </section>
+        </main>
+    </div>
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const path = window.location.pathname;
+            const currentPage = path.split("/").pop().split(".")[0];
+            const buttons = document.querySelectorAll(".categories button");
+            
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    buttons.forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+                });
+            });
+
+            const setActiveButton = () => {
+                buttons.forEach(btn => btn.classList.remove("active"));
+                const currentButton = document.getElementById(currentPage);
+                if (currentButton) {
+                    currentButton.classList.add("active");
+                }
+            };
+
+            setActiveButton();
+        });
+    </script>
+    <script src="darkmode.js"></script>
+    <script src="get_articles.js"></script>
+</body>
+</html>
